@@ -345,6 +345,7 @@ export function ClientContextProvider({ children }) {
 
   const createClient = useCallback(async () => {
     try {
+      // as you can see here, I set it to true.
       setIsInitializing(true);
       const claimedOrigin = localStorage.getItem("wallet_connect_dapp_origin") || origin;
 
@@ -359,6 +360,8 @@ export function ClientContextProvider({ children }) {
       };
 
       console.log(metadata, '------metadata------')
+
+      // here, Client.init takes long time maybe forever.
 
       const _client = await Client.init({
         logger: DEFAULT_LOGGER,
@@ -381,6 +384,7 @@ export function ClientContextProvider({ children }) {
     } catch (err) {
       console.error("Error initializing WalletConnect client:", err);
     } finally {
+      // when init is finished with error or not it set isInitializing to false, right?
       setIsInitializing(false);
       console.log("Initialization process completed, isInitializing set to false");
     }

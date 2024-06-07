@@ -40,7 +40,7 @@ export const DEFAULT_TEST_CHAINS = [
 
 export const DEFAULT_CHAINS = [...DEFAULT_MAIN_CHAINS, ...DEFAULT_TEST_CHAINS];
 
-export const DEFAULT_PROJECT_ID = "bd29c9ad8f4d54a454770e74a8496011"; //process.env.REACT_APP_NEXT_PUBLIC_PROJECT_ID;
+export const DEFAULT_PROJECT_ID = ""; //process.env.REACT_APP_NEXT_PUBLIC_PROJECT_ID;
 export const DEFAULT_RELAY_URL = "wss://relay.walletconnect.com"; //process.env.REACT_APP_NEXT_PUBLIC_RELAY_URL;
 
 export const DEFAULT_LOGGER = "debug";
